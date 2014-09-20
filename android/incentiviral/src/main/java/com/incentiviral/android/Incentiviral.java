@@ -45,25 +45,26 @@ public class Incentiviral {
 
     /**
      * Called by the developer to log an event
+     * @param logEventListener callbacks for logEvent
      * @param type the unique event name
      */
-    public static void logEvent(String type, int count) {
+    public static void logEvent(String type, int count, final LogEventListener logEventListener) {
         IncentiviralClient.getIncentiviralApi().logEvents(new UserEvents(getsUserId(), getsAppId(), type, count), new Callback<Object>() {
             @Override
             public void success(Object o, Response response) {
-
+                logEventListener.onLogEventSuccess();
             }
 
             @Override
             public void failure(RetrofitError error) {
-
+                logEventListener.onLogEventFailure(error.getMessage());
             }
         });
     }
 
     /**
      * A method to check the status of any reward and then show the reward if needed
-     * @param rewardsListener
+     * @param rewardsListener callbacks for rewards
      */
     public static void checkCurrentRewards(final RewardsListener rewardsListener) {
         // make async post to check rewards

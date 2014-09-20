@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.incentiviral.android.Incentiviral;
+import com.incentiviral.android.LogEventListener;
 import com.incentiviral.android.RewardsListener;
 import com.incentiviral.android.model.Reward;
 
@@ -22,19 +23,29 @@ public class SampleActivity extends Activity {
 
         Incentiviral.setup("IncentiviralSample", "akaashanky@gmail.com");
         // logging a simple event
-        Incentiviral.logEvent("facebookShare", 1);
+        Incentiviral.logEvent("facebookShare", 1, new LogEventListener() {
+            @Override
+            public void onLogEventSuccess() {
+                Toast.makeText(SampleActivity.this, "Event logged successfully", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLogEventFailure(String error) {
+                Toast.makeText(SampleActivity.this, "Error in event logging: " + error, Toast.LENGTH_SHORT).show();
+            }
+        });
         // async call to check current rewards
         Incentiviral.checkCurrentRewards(new RewardsListener() {
             @Override
             public void onRewardsReceived(List<Reward> rewards) {
-                if(rewards!=null) {
+                if (rewards != null) {
                     Toast.makeText(SampleActivity.this, rewards.get(0).getDesc(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onRewardsFailed(String error) {
-                Toast.makeText(SampleActivity.this, "Error: " + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SampleActivity.this, "Error in retrieving rewards: " + error, Toast.LENGTH_SHORT).show();
             }
         });
     }
