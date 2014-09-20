@@ -1,21 +1,36 @@
 #Android SDK
+The Incentiviral Android SDK helps devlopers incentivise their apps in unique ways thereby creating a lasting, viral impression on users. For example
+- You can offer discount coupons to users when they share an app message on facebook
+- You can offer in-app currency when users have spent a certain amount of time in the app
 
-##General uses and API
+#Features
+- Custom event logging
+- Per app and per user incentivisation
+- Custom threshold monitoring
+- Dynamically change rewards and threshold from the serverside
 
-- To setup Incentiviral, please add the following to the onCreate method of your activity
+##Setup
+
+To setup Incentiviral, please add the following to the onCreate method of your activity
 ```java
-Incentiviral.setup("AppId", "UserId");
+Incentiviral.setup("appId", "userId");
 ```
-Here 
-AppId is your application id available at the Incentiviral dashboard, this is unique to your application
-UserId is the unique id of the user of the app, incentives will be tracked based on this user id for your application
+Here
+- appId is your application id available at the Incentiviral dashboard, this is unique to your application
+- userId is the unique id of the user of the app, incentives will be tracked based on this user id for your application
 
-
+##Event logging
 To log an event, please call the logEvent method
+```java
+Incentiviral.logEvent("eventType", 1);
+```
+
+For example, if you'd like to log an event that the user has successfully shared the relevant message on facebook, you can
 ```java
 Incentiviral.logEvent("facebookShare", 1);
 ```
 
+##Checking for Rewards
 To check for rewards, please call the checkCurrentRewards method
 ```java
 Incentiviral.checkCurrentRewards(new RewardsListener() {
@@ -32,3 +47,7 @@ Incentiviral.checkCurrentRewards(new RewardsListener() {
   }
 });
 ```
+Details
+- A callback to onRewardsReceived is received when information about the deals is received
+- In case there are no active deals, this list will be blank
+- In case there is an error while retrieving deals, a callback to onRewardsFailed is received
