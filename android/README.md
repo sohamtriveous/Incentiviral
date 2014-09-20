@@ -22,7 +22,7 @@ Here
 ##Event logging
 To log an event, please call the logEvent method
 ```java
-Incentiviral.logEvent("eventType", 1);
+Incentiviral.logEvent("eventType", count);
 ```
 
 For example, if you'd like to log an event that the user has successfully shared the relevant message on facebook, you can
@@ -47,14 +47,17 @@ Incentiviral.checkCurrentRewards(new RewardsListener() {
   }
 });
 ```
-Details
+Note
 - This call is completely asynchronous in nature, there is no need to add support for threading
 - A callback to onRewardsReceived is received when information about the deals is received
 - In case there are no active deals, this list will be blank
 - In case there is an error while retrieving deals, a callback to onRewardsFailed is received
 
-Also available, a synchronous call to check rewards, should be called from a non UI thread, useful when one wants to explicitly wait for the rewards, example:
+Also available, a synchronous call to check rewards, useful when one wants to explicitly wait for the rewards, example:
 
 ```java
 List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
 ```
+Note
+- this should not be called from the UI thread as in might block UI processing
+- can be called from an AsyncTask or any non-UI thread
