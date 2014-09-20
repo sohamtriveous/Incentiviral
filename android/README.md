@@ -53,7 +53,7 @@ Incentiviral.checkCurrentRewards(new RewardsListener() {
   }
 });
 ```
-Note
+**Note**
 - This call is completely asynchronous in nature, there is no need to add support for threading
 - A callback to onRewardsReceived is received when information about the deals is received
 - In case there are no active deals, this list will be blank
@@ -64,7 +64,7 @@ Also available, a synchronous call to check rewards, useful when one wants to ex
 ```java
 List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
 ```
-Note
+**Note**
 - this should not be called from the UI thread as in might block UI processing
 - can be called from an AsyncTask or any non-UI thread
 
