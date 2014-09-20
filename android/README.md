@@ -16,7 +16,7 @@ The sample app "app" included in the repo demonstrates the following features
 - Retrieving the current rewards for the same user
 
 ##Add Incentiviral to your app (Android Studio only)
-- Download the latest incentiviral.aar library from [here](https://github.com/triveous/Incentiviral/blob/master/android/incentiviral.aar)
+- [Download the latest incentiviral.aar library from here](https://github.com/triveous/Incentiviral/blob/master/android/incentiviral.aar)
 - Add the incentiviral.aar file to your libs folder
 - Add the following to your build.gradle file if it is not already there
 ```groovy
