@@ -1,10 +1,15 @@
 package com.incentiviral.android;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.Button;
 
-import com.incentiviral.android.model.Rewards;
+import com.incentiviral.android.model.Reward;
+import com.incentiviral.android.model.UserEvents;
+
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * Created by sohammondal on 20/09/14.
@@ -12,10 +17,13 @@ import com.incentiviral.android.model.Rewards;
 public class Incentiviral {
     private static Incentiviral sIncentiviral;
     private static String sAppId;
-    private static Rewards sRewards;
-
-
+    private static Reward sReward;
     private static String sUserId;
+
+
+    public static String getsUserId() {
+        return sUserId;
+    }
 
     private static final String KEY_USER_ID = "user_id";
 
@@ -24,7 +32,7 @@ public class Incentiviral {
     }
 
     public static void setUserId(String userId) {
-        Incentiviral.sUserId = sUserId;
+        Incentiviral.sUserId = userId;
     }
 
     private static void setAppId(String sAppId) {
@@ -34,7 +42,7 @@ public class Incentiviral {
     public static void setup(final Context context, String appId, String userId) {
         setAppId(appId);
         setUserId(userId);
-        sRewards = fetchRewards(context);
+        sReward = fetchRewards(context);
     }
 
 
@@ -43,8 +51,18 @@ public class Incentiviral {
      * @param context
      * @param eventName the unique event name
      */
-    public static void logEvent(final Context context, String eventName) {
+    public static void logEvent(final Context context, String eventName, int count) {
+        IncentiviralClient.getIncentiviralApi().logEvents(new UserEvents(getsUserId(), getsAppId(), eventName, count), new Callback<Object>() {
+            @Override
+            public void success(Object o, Response response) {
 
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
     }
 
     /**
@@ -52,18 +70,29 @@ public class Incentiviral {
      * @param context
      * @return A set of fresh rewards object
      */
-    public static Rewards fetchRewards(final Context context) {
-        Rewards rewards = null;
-        return rewards;
+    public static Reward fetchRewards(final Context context) {
+        Reward reward = null;
+        return reward;
     }
 
     /**
      * A method to check the status of any reward and then show the reward if needed
      * @param context
      */
-    public static void checkCurrentRewards(final Context context, RewardsListener rewardsListener) {
+    public static void checkCurrentRewards(final Context context, final RewardsListener rewardsListener) {
         // make async post to check rewards
         // if successful use the rewardsListener interface
+        IncentiviralClient.getIncentiviralApi().getRewards(getsAppId(), getsUserId(), new Callback<List<Reward>>() {
+            @Override
+            public void success(List<Reward> rewards, Response response) {
+                rewardsListener.onRewardsReceived(rewards);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
     }
 
 
