@@ -34,7 +34,7 @@ dependencies {
 }
 ```
 
-##Setup
+##Setup incentiviral for your user
 
 To setup Incentiviral, please add the following to the onCreate method of your activity
 ```java
@@ -44,7 +44,7 @@ Here
 - appId is your application id available at the Incentiviral dashboard, this is unique to your application
 - userId is the unique id of the user of the app, incentives will be tracked based on this user id for your application
 
-##Event logging
+##Logging events
 To log an event, please call the logEvent method
 ```java
 Incentiviral.logEvent("eventType", count);
@@ -56,7 +56,7 @@ Incentiviral.logEvent("facebookShare", 1);
 ```
 
 ##Checking for Rewards
-To check for rewards, please call the checkCurrentRewards method which is handled asynchronously
+To check for rewards, please call the checkCurrentRewards method which is handled **asynchronously**
 ```java
 Incentiviral.checkCurrentRewards(new RewardsListener() {
   @Override
@@ -78,7 +78,7 @@ Incentiviral.checkCurrentRewards(new RewardsListener() {
 - In case there are no active deals, this list will be blank
 - In case there is an error while retrieving deals, a callback to onRewardsFailed is received
 
-Also available, a synchronous call to check rewards, useful when one wants to explicitly wait for the rewards, example:
+Also available, a **synchronous** call to check rewards, useful when one wants to explicitly wait for the rewards, example:
 
 ```java
 List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
