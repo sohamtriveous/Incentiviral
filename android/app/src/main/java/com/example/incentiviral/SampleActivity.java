@@ -20,14 +20,16 @@ public class SampleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
 
-        Incentiviral.setup("sohamAppId", "soham@soham.com");
+        Incentiviral.setup("IncentiviralSample", "akaashanky@gmail.com");
         // logging a simple event
         Incentiviral.logEvent("facebookShare", 1);
         // async call to check current rewards
         Incentiviral.checkCurrentRewards(new RewardsListener() {
             @Override
             public void onRewardsReceived(List<Reward> rewards) {
-                Toast.makeText(SampleActivity.this, rewards.get(0).getDesc(), Toast.LENGTH_SHORT).show();
+                if(rewards!=null) {
+                    Toast.makeText(SampleActivity.this, rewards.get(0).getDesc(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
