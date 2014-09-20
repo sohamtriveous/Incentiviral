@@ -51,3 +51,9 @@ Details
 - A callback to onRewardsReceived is received when information about the deals is received
 - In case there are no active deals, this list will be blank
 - In case there is an error while retrieving deals, a callback to onRewardsFailed is received
+
+Also available, a synchronous call to check rewards, should be called from a non UI thread, useful when one wants to explicitly wait for the rewards, example:
+
+```java
+List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
+```
