@@ -61,3 +61,12 @@ List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
 Note
 - this should not be called from the UI thread as in might block UI processing
 - can be called from an AsyncTask or any non-UI thread
+
+##The Reward object
+Once you have a list of rewards that is accessible to the user, you can use the following methods to find details of the reward itself
+```java
+String title = reward.getTitle();
+String description = reward.getDesc();
+String code = reward.getCode();
+```
+With the above information, you can show the incentive to the end user
