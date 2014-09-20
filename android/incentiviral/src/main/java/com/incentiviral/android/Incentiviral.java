@@ -15,7 +15,6 @@ import retrofit.client.Response;
  * Created by sohammondal on 20/09/14.
  */
 public class Incentiviral {
-    private static Incentiviral sIncentiviral;
     private static String sAppId;
     private static String sUserId;
 
@@ -23,8 +22,6 @@ public class Incentiviral {
     private static String getsUserId() {
         return sUserId;
     }
-
-    private static final String KEY_USER_ID = "user_id";
 
     private static String getsAppId() {
         return sAppId;
