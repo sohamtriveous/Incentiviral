@@ -81,5 +81,14 @@ public class Incentiviral {
         });
     }
 
-
+    /**
+     * A synchronous (blocking) version of the checkCurrentRewards API
+     * Should be called from a non UI thread, useful when you want to explicitly wait for the rewards
+     * @return
+     */
+    public static List<Reward> checkCurrentRewardsSync() {
+        // make a synchronous(blocking) post to check rewards
+        // if successful use the rewardsListener interface
+        return IncentiviralClient.getIncentiviralApi().getRewards(getsAppId(), getsUserId());
+    }
 }

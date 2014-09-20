@@ -35,5 +35,7 @@ public class IncentiviralClient {
         void logEvents(@Body UserEvents userEvents, Callback<Object> callback);
         @GET("/rewards")
         void getRewards(@Query("appId") String appId, @Query("uid") String uid, Callback<List<Reward>> callback);
+        @GET("/rewards")
+        List<Reward> getRewards(@Query("appId") String appId, @Query("uid") String uid);
     }
 }
