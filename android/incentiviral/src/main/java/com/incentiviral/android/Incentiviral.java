@@ -17,21 +17,20 @@ import retrofit.client.Response;
 public class Incentiviral {
     private static Incentiviral sIncentiviral;
     private static String sAppId;
-    private static Reward sReward;
     private static String sUserId;
 
 
-    public static String getsUserId() {
+    private static String getsUserId() {
         return sUserId;
     }
 
     private static final String KEY_USER_ID = "user_id";
 
-    public static String getsAppId() {
+    private static String getsAppId() {
         return sAppId;
     }
 
-    public static void setUserId(String userId) {
+    private static void setUserId(String userId) {
         Incentiviral.sUserId = userId;
     }
 
@@ -39,10 +38,15 @@ public class Incentiviral {
         Incentiviral.sAppId = sAppId;
     }
 
+    /**
+     * Setup Incentiviral, must be called every time an apps tarts
+     * @param context
+     * @param appId App id
+     * @param userId User id
+     */
     public static void setup(final Context context, String appId, String userId) {
         setAppId(appId);
         setUserId(userId);
-        sReward = fetchRewards(context);
     }
 
 
@@ -63,16 +67,6 @@ public class Incentiviral {
 
             }
         });
-    }
-
-    /**
-     * A method to fetch Rewards from the rewards endpoint
-     * @param context
-     * @return A set of fresh rewards object
-     */
-    public static Reward fetchRewards(final Context context) {
-        Reward reward = null;
-        return reward;
     }
 
     /**
