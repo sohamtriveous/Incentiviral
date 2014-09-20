@@ -1,6 +1,10 @@
 package com.incentiviral.android;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+
+import com.incentiviral.android.model.Rewards;
 
 /**
  * Created by sohammondal on 20/09/14.
@@ -27,7 +31,7 @@ public class Incentiviral {
         Incentiviral.sAppId = sAppId;
     }
 
-    public void setup(final Context context, String appId, String userId) {
+    public static void setup(final Context context, String appId, String userId) {
         setAppId(appId);
         setUserId(userId);
         sRewards = fetchRewards(context);
@@ -39,7 +43,7 @@ public class Incentiviral {
      * @param context
      * @param eventName the unique event name
      */
-    public void logEvent(final Context context, String eventName) {
+    public static void logEvent(final Context context, String eventName) {
 
     }
 
@@ -48,7 +52,7 @@ public class Incentiviral {
      * @param context
      * @return A set of fresh rewards object
      */
-    public Rewards fetchRewards(final Context context) {
+    public static Rewards fetchRewards(final Context context) {
         Rewards rewards = null;
         return rewards;
     }
@@ -57,8 +61,9 @@ public class Incentiviral {
      * A method to check the status of any reward and then show the reward if needed
      * @param context
      */
-    public void checkCurrentRewardsStatus(final Context context) {
-
+    public static void checkCurrentRewards(final Context context, RewardsListener rewardsListener) {
+        // make async post to check rewards
+        // if successful use the rewardsListener interface
     }
 
 
