@@ -15,6 +15,25 @@ The sample app "app" included in the repo demonstrates the following features
 - Logging a simple event for the current user
 - Retrieving the current rewards for the same user
 
+##Add Incentiviral to your app (Android Studio only)
+- Download the latest incentiviral.aar library from [here](https://github.com/triveous/Incentiviral/blob/master/android/incentiviral.aar)
+- Add the incentiviral.aar file to your libs folder
+- Add the following to your build.gradle file if it is not already there
+```gradle
+repositories {
+  mavenCentral()
+  flatDir {
+    dirs 'libs'
+  }
+}
+```
+- Add the following dependency to the build.gradle file
+```gradle
+dependencies {
+    compile(name:'incentiviral', ext:'aar')
+}
+```
+
 ##Setup
 
 To setup Incentiviral, please add the following to the onCreate method of your activity
