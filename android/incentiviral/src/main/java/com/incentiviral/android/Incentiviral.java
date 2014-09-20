@@ -37,11 +37,10 @@ public class Incentiviral {
 
     /**
      * Setup Incentiviral, must be called every time an apps tarts
-     * @param context
      * @param appId App id
      * @param userId User id
      */
-    public static void setup(final Context context, String appId, String userId) {
+    public static void setup(String appId, String userId) {
         setAppId(appId);
         setUserId(userId);
     }
@@ -49,11 +48,10 @@ public class Incentiviral {
 
     /**
      * Called by the developer to log an event
-     * @param context
-     * @param eventName the unique event name
+     * @param type the unique event name
      */
-    public static void logEvent(final Context context, String eventName, int count) {
-        IncentiviralClient.getIncentiviralApi().logEvents(new UserEvents(getsUserId(), getsAppId(), eventName, count), new Callback<Object>() {
+    public static void logEvent(String type, int count) {
+        IncentiviralClient.getIncentiviralApi().logEvents(new UserEvents(getsUserId(), getsAppId(), type, count), new Callback<Object>() {
             @Override
             public void success(Object o, Response response) {
 
@@ -68,9 +66,9 @@ public class Incentiviral {
 
     /**
      * A method to check the status of any reward and then show the reward if needed
-     * @param context
+     * @param rewardsListener
      */
-    public static void checkCurrentRewards(final Context context, final RewardsListener rewardsListener) {
+    public static void checkCurrentRewards(final RewardsListener rewardsListener) {
         // make async post to check rewards
         // if successful use the rewardsListener interface
         IncentiviralClient.getIncentiviralApi().getRewards(getsAppId(), getsUserId(), new Callback<List<Reward>>() {
