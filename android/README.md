@@ -31,7 +31,7 @@ Incentiviral.logEvent("facebookShare", 1);
 ```
 
 ##Checking for Rewards
-To check for rewards, please call the checkCurrentRewards method
+To check for rewards, please call the checkCurrentRewards method which is handled asynchronously
 ```java
 Incentiviral.checkCurrentRewards(new RewardsListener() {
   @Override
@@ -48,6 +48,7 @@ Incentiviral.checkCurrentRewards(new RewardsListener() {
 });
 ```
 Details
+- This call is completely asynchronous in nature, there is no need to add support for threading
 - A callback to onRewardsReceived is received when information about the deals is received
 - In case there are no active deals, this list will be blank
 - In case there is an error while retrieving deals, a callback to onRewardsFailed is received
