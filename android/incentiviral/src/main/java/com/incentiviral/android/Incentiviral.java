@@ -9,33 +9,27 @@ import java.lang.ref.WeakReference;
  */
 public class Incentiviral {
     private static Incentiviral sIncentiviral;
-    private static WeakReference<Context> sContext;
+    private static String appId;
 
-    public Incentiviral(final Context context) {
-        sContext = new WeakReference<Context>(context);
+    public static String getAppId() {
+        return appId;
     }
 
-    /**
-     * Get a default Incentiviral instance (singleton)
-     * @return the Inentiviral singleton
-     */
-    public static Incentiviral getDefault(final Context context) {
-        if(sIncentiviral ==null) {
-            sIncentiviral = new Incentiviral(context);
-        }
-        return sIncentiviral;
+    private static void setAppId(String appId) {
+        Incentiviral.appId = appId;
     }
 
-    public void setup(String appId) {
+    public void setup(final Context context, String appId) {
+        setAppId(appId);
+    }
+
+    public void logEvent(final Context context, String eventName) {
 
     }
 
-    public void logEvent() {
-
-    }
-
-    public void checkRewards() {
-
+    public Rewards checkRewards(final Context context) {
+        Rewards rewards = null;
+        return rewards;
     }
 
 
