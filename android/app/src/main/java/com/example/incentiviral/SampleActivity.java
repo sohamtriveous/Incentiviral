@@ -4,6 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.incentiviral.android.Incentiviral;
+import com.incentiviral.android.RewardsListener;
+import com.incentiviral.android.model.Reward;
+
+import java.util.List;
 
 
 public class SampleActivity extends Activity {
@@ -12,6 +19,22 @@ public class SampleActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
+
+        Incentiviral.setup("sohamAppId", "soham@soham.com");
+        // logging a simple event
+        Incentiviral.logEvent("facebookShare", 1);
+        // async call to check current rewards
+        Incentiviral.checkCurrentRewards(new RewardsListener() {
+            @Override
+            public void onRewardsReceived(List<Reward> rewards) {
+                Toast.makeText(SampleActivity.this, rewards.get(0).getDesc(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRewardsFailed(String error) {
+                Toast.makeText(SampleActivity.this, "Error: " + error, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

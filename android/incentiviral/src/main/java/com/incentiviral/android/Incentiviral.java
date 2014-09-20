@@ -1,7 +1,5 @@
 package com.incentiviral.android;
 
-import android.content.Context;
-
 import com.incentiviral.android.model.Reward;
 import com.incentiviral.android.model.UserEvents;
 
@@ -17,7 +15,6 @@ import retrofit.client.Response;
 public class Incentiviral {
     private static String sAppId;
     private static String sUserId;
-
 
     private static String getsUserId() {
         return sUserId;
@@ -79,7 +76,7 @@ public class Incentiviral {
 
             @Override
             public void failure(RetrofitError error) {
-
+                rewardsListener.onRewardsFailed(error.getMessage());
             }
         });
     }

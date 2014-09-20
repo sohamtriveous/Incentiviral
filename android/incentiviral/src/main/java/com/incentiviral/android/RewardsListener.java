@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface RewardsListener {
     public void onRewardsReceived(List<Reward> rewards);
+    public void onRewardsFailed(String error);
 }
