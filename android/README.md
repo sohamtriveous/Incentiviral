@@ -19,7 +19,7 @@ The sample app "app" included in the repo demonstrates the following features
 - Download the latest incentiviral.aar library from [here](https://github.com/triveous/Incentiviral/blob/master/android/incentiviral.aar)
 - Add the incentiviral.aar file to your libs folder
 - Add the following to your build.gradle file if it is not already there
-```gradle
+```groovy
 repositories {
   mavenCentral()
   flatDir {
@@ -28,7 +28,7 @@ repositories {
 }
 ```
 - Add the following dependency to the build.gradle file
-```gradle
+```groovy
 dependencies {
     compile(name:'incentiviral', ext:'aar')
 }
