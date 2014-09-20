@@ -47,13 +47,35 @@ Here
 ##Logging events
 To log an event, please call the logEvent method
 ```java
-Incentiviral.logEvent("eventType", count);
+Incentiviral.logEvent("eventType", count, new LogEventListener() {
+  @Override
+  public void onLogEventSuccess() {
+    Toast.makeText(SampleActivity.this, "Event logged successfully", Toast.LENGTH_SHORT).show();
+  }
+
+  @Override
+  public void onLogEventFailure(String error) {
+    Toast.makeText(SampleActivity.this, "Error in event logging: " + error, Toast.LENGTH_SHORT).show();
+  }
+});
 ```
 
 For example, if you'd like to log an event that the user has successfully shared the relevant message on facebook, you can
 ```java
-Incentiviral.logEvent("facebookShare", 1);
+Incentiviral.logEvent("facebookShare", 1, new LogEventListener() {
+  @Override
+  public void onLogEventSuccess() {
+    Toast.makeText(SampleActivity.this, "Event logged successfully", Toast.LENGTH_SHORT).show();
+  }
+
+  @Override
+  public void onLogEventFailure(String error) {
+    Toast.makeText(SampleActivity.this, "Error in event logging: " + error, Toast.LENGTH_SHORT).show();
+  }
+});
 ```
+**Note**
+- There are some callbacks, mainly onLogEventSuccess and onLogEventFailure that let us know the status of the event logging
 
 ##Checking for Rewards
 To check for rewards, please call the checkCurrentRewards method which is handled **asynchronously**
