@@ -25,18 +25,19 @@ The sample app "app" included in the repo demonstrates the following features
 ##Setup Incentiviral for your user
 
 To receive async callbacks of the logging and upcoming APIs, user must conform to following protocol
-```objectivec
+```objective-c
 @protocol viralDelegate <NSObject>
 
 @required
 - (void) didReceiveRewards:(NSDictionary *) rewardsDictionary withError:(NSError *) error;
 - (void) didEventLogWithError:(NSError *) error;
+- (void) didReceiveRewardsList:(NSArray *) rewardsList withError:(NSError *) error;
 @end
 ```
 
 To initialise Incentiviral call ```initWithAppIdentifier:withUserIdentifier``` which returns an Incentiviral object.
-```objectivec
-[[IncentiViral alloc] initWithAppIdentifier:@“xyz” withUserIdentifier:@“xyz”];
+```objective-c
+[[IncentiViral alloc] initWithAppIdentifier:@"xyz" withUserIdentifier:@"xyz"];
 ```
 Here
 - **AppIdentifier** is your application id available at the Incentiviral dashboard, this is unique to your application
@@ -44,21 +45,28 @@ Here
 
 ##Logging events
 To log an event, call the ```logEventWithEventName:withCount:withDelegate``` method
-```objectivec
-[IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
+```objective-c
+[incentiviralObject logEventWithEventName:@"eventName" withCount:1 withDelegate:self];
 ```
 and implement appropriate protocol method to receive success/failure callback.
 
 ##Checking for Rewards
 To check for rewards, call the ```checkCurrentRewardsWithDelegate```
-```objectivec
-[IncentiviralObject checkCurrentRewardsWithDelegate:self];
+```objective-c
+[incentiviralObject checkCurrentRewardsWithDelegate:self];
+```
+and handle the appropriate protocol method for getting success/failure callback.
+
+##Show all rewards
+To fetch a list of all possible rewards, call the ```checkStaticRewardListWithDelegate:``` method
+```objective-c
+[incentiviralObject checkStaticRewardListWithDelegate:self];
 ```
 and handle the appropriate protocol method for getting success/failure callback.
 
 For example, if you'd like to log an event that the user visited some screen in your app 10 times, you can
-```objectivec
-[IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
+```objective-c
+[incentiviralObject logEventWithEventName:@"eventName" withCount:1 withDelegate:self];
 
 - (void) didEventLogWithError:(NSError *)error
 {
