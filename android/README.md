@@ -1,5 +1,5 @@
 #Android SDK
-The Incentiviral Android SDK helps devlopers incentivise their apps in unique ways thereby creating a lasting, viral impression on users. For example
+The Incentiviral Android SDK helps developers incentivise their apps in unique ways thereby creating a lasting, viral impression on users. For example
 - You can offer discount coupons to users when they share an app message on facebook
 - You can offer in-app currency when users have spent a certain amount of time in the app
 
@@ -43,8 +43,8 @@ To setup Incentiviral, please add the following to the onCreate method of your a
 Incentiviral.setup("appId", "userId");
 ```
 Here
-- appId is your application id available at the Incentiviral dashboard, this is unique to your application
-- userId is the unique id of the user of the app, incentives will be tracked based on this user id for your application
+- **appId** is your application id available at the Incentiviral dashboard, this is unique to your application
+- **userId** is the unique id of the user of the app, incentives will be tracked based on this user id for your application
 
 ##Logging events
 To log an event, please call the logEvent method
