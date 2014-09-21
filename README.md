@@ -11,6 +11,8 @@ For example, by using the SDK
 
 ![The LowPrice app using the Incentiviral SDK ](http://s27.postimg.org/xca7v5smr/incentiviral1.png "The LowPrice android app using the Incentiviral SDK")
 
+![The LowPrice app using the Incentiviral SDK ](http://s18.postimg.org/njix9rtwp/ipadmini.png "The LowPrice android app using the Incentiviral SDK")
+
 ##Mobile SDKs
 - [Android SDK](https://github.com/triveous/Incentiviral/tree/master/android)
 - [iOS SDK](https://github.com/triveous/Incentiviral/tree/master/ios)
