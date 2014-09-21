@@ -25,7 +25,7 @@ The sample app "app" included in the repo demonstrates the following features
 ##Setup Incentiviral for your user
 
 To receive async callbacks of the logging and upcoming APIs, user must conform to following protocol
-```
+```objectivec
 @protocol viralDelegate <NSObject>
 
 @required
