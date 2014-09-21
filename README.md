@@ -8,7 +8,7 @@ The Incentiviral Android and IOS SDKs help devlopers
 For example, by using the SDK
 - you can generate virality in your app by incentivising app shares on facebook. When users share your app on facebook, you can use this sdk to offer them some kind of discount coupons (virtual good).
 - you can drive engagement amongst users by offering in-app currency to users who spend a large amount of time in the app
-- 
+
 ![](http://s27.postimg.org/xca7v5smr/incentiviral1.png)    ![](http://s12.postimg.org/igb6gjl2l/ipadmini.png)
 
 ##Mobile SDKs
