@@ -5,7 +5,7 @@ The Incentiviral Android and IOS SDKs help devlopers incentivise their apps in u
 
 ![The LowPrice app using the Incentiviral SDK ](http://s27.postimg.org/xca7v5smr/incentiviral1.png "The LowPrice android app using the Incentiviral SDK")
 
-##Specific SDKs
+##Mobile SDKs
 - [Click here for the android SDK](https://github.com/triveous/Incentiviral/tree/master/android)
 - [Click here for the iOS SDK](https://github.com/triveous/Incentiviral/tree/master/ios)
 
