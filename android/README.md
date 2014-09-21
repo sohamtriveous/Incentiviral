@@ -1,5 +1,5 @@
-#Incentiviral Android and iOS SDK
-The Incentiviral Android and IOS SDKs help devlopers 
+#Incentiviral Android SDK
+The Incentiviral Android SDK can help devlopers 
 - drive engagement in their app
 - generate app virality
 - increase the app revenue
