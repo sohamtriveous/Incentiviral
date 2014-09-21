@@ -11,11 +11,18 @@ The Incentiviral Android SDK helps developers incentivise their apps in unique w
 - Custom threshold monitoring
 - Dynamically change rewards and threshold from the serverside
 
-##Sample
+#Sample
+Integrating the Incentiviral sdk is as easy as
+- Calling the setup method
+- Calling the logEvent method to log events
+- Calling getRewards to get information on the rewards accrued by the user
+
 The sample app "app" included in the repo demonstrates the following features
 - Setting up the Incentiviral SDK with the appId and userId
 - Logging a simple event for the current user
 - Retrieving the current rewards for the same user
+
+#Integration details
 
 ##Add Incentiviral to your app (Android Studio only)
 - [Download the latest incentiviral.aar library from here](https://github.com/triveous/Incentiviral/blob/master/android/incentiviral.aar)
