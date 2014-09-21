@@ -2,6 +2,7 @@ package com.incentiviral.android;
 
 import com.incentiviral.android.model.Reward;
 import com.incentiviral.android.model.UserEvents;
+import com.incentiviral.android.model.list.RewardList;
 
 import java.util.List;
 
@@ -91,5 +92,23 @@ public class Incentiviral {
         // make a synchronous(blocking) post to check rewards
         // if successful use the rewardsListener interface
         return IncentiviralClient.getIncentiviralApi().getRewards(getsAppId(), getsUserId());
+    }
+
+    /**
+     * A method to get a static list of all possible rewards for any app
+     * @param staticRewardListListener
+     */
+    public static void checkStaticRewardList(final StaticRewardListListener staticRewardListListener) {
+        IncentiviralClient.getIncentiviralApi().getRewardsList(getsAppId(), new Callback<List<RewardList>>() {
+            @Override
+            public void success(List<RewardList> rewardLists, Response response) {
+                staticRewardListListener.onRewardListReceived(rewardLists);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                staticRewardListListener.onRewardListFailed(error.getMessage());
+            }
+        });
     }
 }

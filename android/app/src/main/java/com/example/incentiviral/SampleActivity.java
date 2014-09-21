@@ -9,7 +9,9 @@ import android.widget.Toast;
 import com.incentiviral.android.Incentiviral;
 import com.incentiviral.android.LogEventListener;
 import com.incentiviral.android.RewardsListener;
+import com.incentiviral.android.StaticRewardListListener;
 import com.incentiviral.android.model.Reward;
+import com.incentiviral.android.model.list.RewardList;
 
 import java.util.List;
 
@@ -46,6 +48,19 @@ public class SampleActivity extends Activity {
             @Override
             public void onRewardsFailed(String error) {
                 Toast.makeText(SampleActivity.this, "Error in retrieving rewards: " + error, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // async call to check all possible rewards
+        Incentiviral.checkStaticRewardList(new StaticRewardListListener() {
+            @Override
+            public void onRewardListReceived(List<RewardList> rewardLists) {
+                Toast.makeText(SampleActivity.this, rewardLists.get(0).getReward().getDesc(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRewardListFailed(String error) {
+
             }
         });
     }

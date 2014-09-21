@@ -2,6 +2,7 @@ package com.incentiviral.android;
 
 import com.incentiviral.android.model.Reward;
 import com.incentiviral.android.model.UserEvents;
+import com.incentiviral.android.model.list.RewardList;
 
 import java.util.List;
 
@@ -37,5 +38,7 @@ public class IncentiviralClient {
         void getRewards(@Query("appId") String appId, @Query("uid") String uid, Callback<List<Reward>> callback);
         @GET("/rewards")
         List<Reward> getRewards(@Query("appId") String appId, @Query("uid") String uid);
+        @GET("/rules")
+        void getRewardsList(@Query("appId") String appId, Callback<List<RewardList>> callback);
     }
 }
