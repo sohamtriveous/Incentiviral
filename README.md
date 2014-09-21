@@ -11,7 +11,7 @@ The Incentiviral Android and IOS SDKs help devlopers incentivise their apps in u
 - Custom threshold monitoring
 - Dynamically change rewards and threshold from the serverside
 
-![The Incentiviral dashboard home page ](http://s27.postimg.org/xgwkc5gs3/Incenti_Viral_home.png "The Incentiviral dashboard home page")
+![The Incentiviral dashboard home page ](http://s21.postimg.org/hxbyq1cav/iv_dashboard.png "The Incentiviral dashboard home page")
 
 ![Adding a new rule (incentive) in the Incentiviral dashboard](http://s11.postimg.org/d9du73i1v/Incenti_Viral_addrule.png "Adding a new rule (incentive) in the Incentiviral dashboard")
 
