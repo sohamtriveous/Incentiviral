@@ -13,6 +13,8 @@ For example, by using the SDK
 
 ![The LowPrice app using the Incentiviral SDK ](http://s4.postimg.org/l5582vclp/ipadmini.png "The LowPrice android app using the Incentiviral SDK")
 
+![](http://s27.postimg.org/xca7v5smr/incentiviral1.png)  |  ![](http://s4.postimg.org/l5582vclp/ipadmini.png)
+
 ##Mobile SDKs
 - [Android SDK](https://github.com/triveous/Incentiviral/tree/master/android)
 - [iOS SDK](https://github.com/triveous/Incentiviral/tree/master/ios)
