@@ -79,7 +79,7 @@ Incentiviral.logEvent("facebookShare", 1, new LogEventListener() {
 **Note**
 - There are some callbacks, mainly onLogEventSuccess and onLogEventFailure that let us know the status of the event logging
 
-##Checking for Rewards
+##Checking for Rewards (that have been achieved)
 To check for rewards, please call the checkCurrentRewards method which is handled **asynchronously**
 ```java
 Incentiviral.checkCurrentRewards(new RewardsListener() {
@@ -98,7 +98,7 @@ Incentiviral.checkCurrentRewards(new RewardsListener() {
 ```
 **Note**
 - This call is completely asynchronous in nature, there is no need to add support for threading
-- A callback to onRewardsReceived is received when information about the deals is received
+- A callback to onRewardsReceived is received when information about the rewards is received
 - In case there are no active deals, this list will be blank
 - In case there is an error while retrieving deals, a callback to onRewardsFailed is received
 
@@ -110,6 +110,27 @@ List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
 **Note**
 - this should not be called from the UI thread as in might block UI processing
 - can be called from an AsyncTask or any non-UI thread
+
+##Show all rewards
+To fetch a list of all possible rewards, please call the checkStaticRewardList method
+
+```java
+Incentiviral.checkStaticRewardList(new StaticRewardListListener() {
+  @Override
+  public void onRewardListReceived(List<RewardList> rewardLists) {
+    Toast.makeText(SampleActivity.this, rewardLists.get(0).getReward().getDesc(), Toast.LENGTH_SHORT).show();
+  }
+
+  @Override
+  public void onRewardListFailed(String error) {
+  }
+});
+```
+**Note**
+- This call is completely asynchronous in nature, there is no need to add support for threading
+- A callback to onRewardListReceived is received when information about the rewards is received
+- In case there are no active deals, this list will be blank
+- In case there is an error while retrieving deals, a callback to onRewardListFailed is received
 
 ##The Reward object
 Once you have a list of rewards that is accessible to the user, you can use the following methods to find details of the reward itself
