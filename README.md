@@ -12,8 +12,10 @@ With our powerful dashboard, the developer has complete control of how the incen
 - Custom threshold monitoring
 - Dynamically change rewards and threshold from the serverside
 
+**The Incentiviral dashboard home page**
 ![The Incentiviral dashboard home page ](http://s21.postimg.org/hxbyq1cav/iv_dashboard.png "The Incentiviral dashboard home page")
 
+**Adding a new rule (incentive) in the Incentiviral dashboard**
 ![Adding a new rule (incentive) in the Incentiviral dashboard](http://s18.postimg.org/zacfeca3t/iv_dashboard_rule.png "Adding a new rule (incentive) in the Incentiviral dashboard")
 
 ##Specific SDKs
