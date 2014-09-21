@@ -8,7 +8,6 @@ For example, by using the SDK
 - you can generate virality in your app by incentivising app shares on facebook. When users share your app on facebook, you can use this sdk to offer them some kind of discount coupons (virtual good).
 - you can drive engagement amongst users by offering in-app currency to users who spend a large amount of time in the app
 
-Example: The LowPrice app using the Incentiviral SDK
 ![The LowPrice app using the Incentiviral SDK ](http://s27.postimg.org/xca7v5smr/incentiviral1.png "The LowPrice android app using the Incentiviral SDK")
 
 ##Mobile SDKs
