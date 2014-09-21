@@ -13,6 +13,8 @@ public class Reward {
     @Expose
     private String title;
     @Expose
+    private String eventType;
+    @Expose
     private String desc;
     @Expose
     private String code;
@@ -47,6 +49,14 @@ public class Reward {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
     }
 
     public String getDesc() {

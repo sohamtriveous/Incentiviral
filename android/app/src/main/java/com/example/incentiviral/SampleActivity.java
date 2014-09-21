@@ -39,7 +39,7 @@ public class SampleActivity extends Activity {
             @Override
             public void onRewardsReceived(List<Reward> rewards) {
                 if (rewards != null) {
-                    Toast.makeText(SampleActivity.this, rewards.get(0).getDesc(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SampleActivity.this, rewards.get(0).getEventType(), Toast.LENGTH_SHORT).show();
                 }
             }
 
