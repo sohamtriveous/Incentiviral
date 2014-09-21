@@ -1,7 +1,4 @@
-Incentiviral
-============
-
-#Android and IOS SDK
+#Incentiviral Android and IOS SDK
 The Incentiviral Android and IOS SDKs help devlopers incentivise their apps in unique ways thereby creating a lasting, viral impression on users. For example
 - You can offer discount coupons to users when they share an app message on facebook
 - You can offer in-app currency when users have spent a certain amount of time in the app
@@ -15,5 +12,5 @@ The Incentiviral Android and IOS SDKs help devlopers incentivise their apps in u
 - Dynamically change rewards and threshold from the serverside
 
 ##Specific SDKs
-- [For the android SDK please click here](https://github.com/triveous/Incentiviral/tree/master/android)
-- [For the iOS SDK please click here](https://github.com/triveous/Incentiviral/tree/master/ios)
+- [Click here for the android SDK](https://github.com/triveous/Incentiviral/tree/master/android)
+- [Click here for the iOS SDK](https://github.com/triveous/Incentiviral/tree/master/ios)
