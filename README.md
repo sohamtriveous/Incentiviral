@@ -1,4 +1,4 @@
-#Incentiviral Android and IOS SDK
+#Incentiviral Android and iOS SDK
 The Incentiviral Android and IOS SDKs help devlopers incentivise their apps in unique ways thereby creating a lasting, viral impression on users. For example
 - You can offer discount coupons to users when they share an app message on facebook
 - You can offer in-app currency when users have spent a certain amount of time in the app
