@@ -3,7 +3,7 @@ The Incentiviral iOS SDK help developers incentivise their apps in unique ways t
 - You can offer discount coupons to users when they share an app message on facebook
 - You can offer in-app currency when users have spent a certain amount of time in the app
 
-![The LowPrice app using the Incentiviral SDK ](http://s27.postimg.org/xca7v5smr/incentiviral1.png "The LowPrice android app using the Incentiviral SDK")
+![The LowPrice app using the Incentiviral SDK ](http://s18.postimg.org/njix9rtwp/ipadmini.png "The LowPrice android app using the Incentiviral SDK")
 
 #Features
 - Custom event logging
