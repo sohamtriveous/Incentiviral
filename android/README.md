@@ -3,6 +3,8 @@ The Incentiviral Android SDK helps devlopers incentivise their apps in unique wa
 - You can offer discount coupons to users when they share an app message on facebook
 - You can offer in-app currency when users have spent a certain amount of time in the app
 
+![The LowPrice app using the Incentiviral SDK ](http://s2.postimg.org/69vvt7mg9/incentiviral.png "The LowPrice android app using the Incentiviral SDK")
+
 #Features
 - Custom event logging
 - Per app and per user incentivisation
