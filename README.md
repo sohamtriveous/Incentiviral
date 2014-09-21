@@ -5,11 +5,15 @@ The Incentiviral Android and IOS SDKs help devlopers incentivise their apps in u
 
 ![The LowPrice app using the Incentiviral SDK ](http://s27.postimg.org/xca7v5smr/incentiviral1.png "The LowPrice android app using the Incentiviral SDK")
 
-##Features
+##With our powerful dashboard, the developer has complete control of how the incentives are rolled out to the customer
 - Custom event logging
 - Per app and per user incentivisation
 - Custom threshold monitoring
 - Dynamically change rewards and threshold from the serverside
+
+![The Incentiviral dashboard home page ](http://s27.postimg.org/xgwkc5gs3/Incenti_Viral_home.png "The Incentiviral dashboard home page")
+
+![Adding a new rule (incentive) in the Incentiviral dashboard](http://s11.postimg.org/d9du73i1v/Incenti_Viral_addrule.png "Adding a new rule (incentive) in the Incentiviral dashboard")
 
 ##Specific SDKs
 - [Click here for the android SDK](https://github.com/triveous/Incentiviral/tree/master/android)
